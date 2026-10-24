@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { links } from '../config';
+---
+<Base title="App updates" description="Follow MacDigiPet development and the planned beta. No beta release date has been set; everyone is welcome in Discord.">
+  <div class="wrap narrow page">
+    <h1>Follow MacDigiPet’s progress</h1>
+    <p>The app is in development. A beta is planned, but no release date has been set. Join Discord for updates and conversation, whether or not you want to test.</p>
+    <div class="row actions"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a><a class="btn alt" href="/wallpaper">Get the free wallpaper</a></div>
+    <h2>Future app builds</h2>
+    <p>When a build is ready to share, its release notes will include the version, requirements and installation steps. You can <a href="/beta">learn about the planned beta</a> and express interest in future testing.</p>
+    <p><a href={links.releases} target="_blank" rel="noopener noreferrer">Check the app release archive</a></p>
+    <h2>Need a hand?</h2>
+    <p>Ask about the project or share ideas in <a href={links.discord} target="_blank" rel="noopener noreferrer">Discord</a>. You don’t need to sign up for testing to join the conversation.</p>
+    <p>Enjoying the project? <a href="/support">Support the developer</a> with an optional tip or feedback.</p>
+  </div>
+</Base>

@@ -1,0 +1,38 @@
+---
+import '../styles/global.css';
+import { links, app } from '../config';
+interface Props { title?: string; description?: string; }
+const { title, description = 'A native macOS Digimon companion that lives on your desktop, built on Digimon World 1 care and evolution.' } = Astro.props;
+const full = title ? `${title} · ${app.name}` : `${app.name} — a Digimon partner on your Mac desktop`;
+const path = Astro.url.pathname.replace(/\/$/, '');
+const nav = [['/', 'Home'], ['/wallpaper', 'Wallpaper'], ['/beta', 'Community & beta'], ['/devlog', 'Dev Log'], ['/support', 'Support']];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{full}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={full} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="/img/village.jpg" />
+  <link rel="icon" href="/img/icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site"><div class="wrap">
+    <a class="brand" href="/"><img src="/img/icon.png" alt="" width="32" height="32" />{app.name}</a>
+    <nav aria-label="Main">
+      {nav.map(([href, label]) => <a href={href} aria-current={(href === '/' ? path === '' : path.startsWith(href)) ? 'page' : undefined}>{label}</a>)}
+    </nav>
+  </div></header>
+  <main id="main"><slot /></main>
+  <footer class="site"><div class="wrap">
+    <p><strong>{app.name}</strong> is an unofficial fan project. Digimon, Digimon World and related franchise names, characters and game assets belong to their respective rights holders, including Bandai Namco Entertainment and Toei Animation. This project is not affiliated with, endorsed by or sponsored by them.</p>
+    <p>Donations support the developer’s time and tooling. They do not buy the app, game assets or any Digimon content, and they confer no rights over them.</p>
+    <p><a href="/beta">Community &amp; beta</a> · <a href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a> · <a href={links.kofi} target="_blank" rel="noopener noreferrer">Ko-fi</a> · <a href={links.saweria} target="_blank" rel="noopener noreferrer">Saweria</a> · <a href="/download">App updates</a></p>
+    <p><a href="/license">Copyright &amp; License</a></p>
+  </div></footer>
+</body>
+</html>

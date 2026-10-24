@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+const posts = (await getCollection('devlog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+---
+<Base title="Dev Log" description="Progress notes from the development of MacDigiPet.">
+  <div class="wrap narrow" style="padding-top:48px">
+    <h1>Dev Log</h1>
+    <p class="muted">What changed, what broke, and why.</p>
+    {posts.map((p) => (
+      <article class="post">
+        <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+        <h2><a href={`/devlog/${p.id}`}>{p.data.title}</a></h2>
+        <p class="muted">{p.data.summary}</p>
+      </article>
+    ))}
+  </div>
+</Base>

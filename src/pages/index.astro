@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { app, links } from '../config';
+const features = [
+  ['A partner that lives on your desktop', 'Click for Status & Care, drag to reposition, right-click for quick actions. It stays on one Space and can travel between Spaces and monitors.'],
+  ['Digimon World 1 care & evolution', '122 forms, four eggs, original evolution requirements, condition bubbles and the Numemon fallback, all driven by a real-time game clock.'],
+  ['A village to come home to', 'Choose your desktop, then hatch an egg in the village park. Your partner sleeps in the house and walks outside when it wakes.'],
+  ['Battles on the desktop', 'Duels play out over your windows with native move effects, contact and shadows.'],
+  ['Pixel UI, native feel', 'A pixel icon kit and V-Pet portraits share the status panel, notch controls and reaction bubbles. Built with SwiftUI, AppKit and RealityKit.'],
+  ['Yours alone', 'Saves stay on your Mac. No account, no tracking.'],
+];
+const shots = [
+  ['/img/status-panel.png', 'Status & Care with pixel icons and V-Pet portraits'],
+  ['/img/evolution-phases.png', 'Evolution sequence, synced to the original cues'],
+  ['/img/notch-controls.png', 'Notch controls'],
+  ['/img/sleep-reaction-under-feet.png', 'Sleep reaction bubble'],
+];
+---
+<Base>
+  <section class="hero"><div class="wrap">
+    <span class="badge">{app.version} · macOS</span>
+    <h1>Your Digimon partner,<br />on your Mac desktop.</h1>
+    <p>MacDigiPet is a native macOS companion with Digimon World 1 care and evolution, a village of its own, and room to roam across your Spaces.</p>
+    <div class="row"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a><a class="btn alt" href="/wallpaper">Try the free wallpaper</a></div>
+    <p class="hero-note">A beta is planned, with no release date set yet. Join the community to follow along—testing is optional.</p>
+  </div></section>
+
+  <section class="pad"><div class="wrap">
+    <h2>A little life on your desktop</h2>
+    <div class="grid">{features.map(([t, d]) => <div class="card"><h3>{t}</h3><p>{d}</p></div>)}</div>
+  </div></section>
+
+  <section class="pad"><div class="wrap">
+    <h2>A look inside</h2>
+    <div class="grid">{shots.map(([src, cap]) => <figure class="shot"><img src={src} alt={cap} loading="lazy" /><figcaption>{cap}</figcaption></figure>)}</div>
+  </div></section>
+
+  <section class="pad"><div class="wrap narrow">
+    <h2>Come hang out in the village</h2>
+    <p>Follow development, share your desktop and swap ideas with fellow Digimon fans in Discord. Everyone is welcome, whether you want to test a future beta or just enjoy the community.</p>
+    <p>Interested in testing? Read about the <a href="/beta">planned beta</a> and share your interest. The release date has not been set.</p>
+    <div class="row"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a><a class="btn alt" href={links.kofi} target="_blank" rel="noopener noreferrer">Support on Ko-fi</a><a class="btn alt" href={links.saweria} target="_blank" rel="noopener noreferrer">Support on Saweria</a></div>
+    <p class="muted">Support is optional. It helps with development time and tools, and does not buy beta access.</p>
+    <div class="notice"><strong>Follow the work as it grows.</strong> Progress notes live in the <a href="/devlog">dev log</a>.</div>
+  </div></section>
+</Base>

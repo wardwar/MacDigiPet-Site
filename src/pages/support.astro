@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { links } from '../config';
+---
+<Base title="Support" description="Support MacDigiPet development through Ko-fi or Saweria, or join the Discord community to follow progress and share ideas.">
+  <div class="wrap narrow page">
+    <h1>Support the developer</h1>
+    <p>If the wallpaper makes your desktop a little nicer or you want to help MacDigiPet grow, a voluntary tip helps cover development time, tooling and testing. The wallpaper and Discord community are free, and you’re welcome to join without taking part in testing.</p>
+    <div class="row actions">
+      <a class="btn" href={links.kofi} target="_blank" rel="noopener noreferrer">Support on Ko-fi</a>
+      <a class="btn alt" href={links.saweria} target="_blank" rel="noopener noreferrer">Support on Saweria</a>
+      <a class="btn alt" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a>
+    </div>
+    <p class="muted">Use Ko-fi for international support, or Saweria for local support from Indonesia.</p>
+    <h2>What support means</h2>
+    <div class="notice">Tips support the developer’s time and tools. They do not purchase the wallpaper, app, game assets or Digimon content. There are no donation-only beta slots or paid perks.</div>
+    <p>Read the <a href="/license">Copyright &amp; License</a> page for ownership and usage permissions.</p>
+    <h2>Help without spending</h2>
+    <ul>
+      <li>Join <a href={links.discord} target="_blank" rel="noopener noreferrer">Discord</a> to follow development and share ideas—testing is optional.</li>
+      <li>If you’d like to help test in the future, <a href="/beta">read about the planned beta</a>. No release date has been set yet.</li>
+      <li>Share the <a href="/wallpaper">free village wallpaper</a> with a friend.</li>
+    </ul>
+  </div>
+</Base>
