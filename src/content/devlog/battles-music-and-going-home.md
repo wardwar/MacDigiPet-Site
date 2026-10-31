@@ -4,7 +4,7 @@ date: 2026-10-31T20:00:00Z
 summary: Battle commands move into the notch, your partner shows up beside it, original DW1 area music joins in, and partners now walk home when nature calls.
 ---
 
-A round of small things that make MacDigiPet feel more alive on a real desk, plus a few clips filmed on a MacBook while testing the alpha.
+A round of small things that make MacDigiPet feel more alive on a real desk, plus a few clips filmed on a MacBook while testing the first beta build.
 
 <video src="/media/going-home.mp4" poster="/media/going-home.jpg" muted loop playsinline controls aria-label="A partner says it has to get back to the village, then appears at its house"></video>
 
@@ -30,8 +30,8 @@ You can now turn on background music from the menu bar. Eight original Digimon W
 
 ![A partner resting on the village bench at night](/img/partner-bench.jpg)
 
-## Testing the alpha
+## Joining the beta
 
-The first alpha is being prepared for a small group of testers. Testing is organised in our [Discord](https://discord.gg/a9jSVr922). Post in **#beta-interest** if you’ve completed Digimon World 1 and would like to help, or just come along to watch it grow. [How testing works →](/beta)
+The first beta is being prepared for a small group of testers. Testing is organised in our [Discord](https://discord.gg/a9jSVr922). Post in **#beta-interest** if you’ve completed Digimon World 1 and would like to help, or just come along to watch it grow. [How testing works →](/beta)
 
 MacDigiPet is and will stay free. If you enjoy following along, you can [support the developer](/support). It’s always optional.

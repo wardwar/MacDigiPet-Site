@@ -1,18 +1,18 @@
 ---
 title: A little closer to the Digital World
 date: 2026-10-31
-summary: A blue digital look, a refreshed status panel, and a first DW1-focused alpha build.
+summary: A blue digital look, a refreshed status panel, and a first DW1-focused beta build.
 ---
 
 MacDigiPet is starting to look a little more like the world that inspired it. This update brings a blue digital style to the first-launch guide, the installer and the status panel, along with a pixel-art Botamon icon.
 
 ![The blue Status & Care panel with an Agumon portrait](/img/status-panel.png)
 
-## A first step towards alpha
+## A first step towards the beta
 
-The first alpha build focuses on **Digimon World 1**: 122 available forms, four eggs, and DW1 battle-only models. It includes the final village wallpapers and an optional selection of original DW1 background music. Local LLM chat is not included in the alpha.
+The first beta build focuses on **Digimon World 1**: 122 available forms, four eggs, and DW1 battle-only models. It includes the final village wallpapers and an optional selection of original DW1 background music. Local LLM chat is not included in this first beta.
 
-The macOS installer now uses the familiar drag-to-Applications flow. The alpha is still being prepared and tested; a public release date has not been announced.
+The macOS installer now uses the familiar drag-to-Applications flow. The beta is still being prepared and tested; a public release date has not been announced.
 
 ## Your partner at a glance
 
