@@ -27,7 +27,8 @@ nav a:hover, nav a[aria-current="page"] { background: var(--amber); color: var(-
 :focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
 .skip-link { position: absolute; top: -100px; left: 16px; z-index: 20; padding: 8px 16px; background: var(--card); color: var(--fg); }
 .skip-link:focus { top: 8px; }
-.btn.alt { background: var(--amber); color: var(--ink); }
+/* Secondary actions stay quiet so each page has one clear primary button. */
+.btn.alt { background: transparent; color: var(--fg); border-color: #8cdeff; box-shadow: none; }
 .row { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero { position: relative; color: #fff; border-bottom: var(--px) solid var(--line); background: #06132e url(/img/village.jpg) center/cover; }
 .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6,19,46,.94), rgba(6,19,46,.56)); }
@@ -55,7 +56,8 @@ code, kbd { font-family: ui-monospace, Menlo, monospace; background: var(--card)
 .post { padding: 18px 0; border-bottom: 2px dashed color-mix(in srgb, var(--line) 35%, transparent); }
 .post time { font: .85rem ui-monospace, Menlo, monospace; color: var(--muted); }
 .post h2 { margin: .2em 0; font-size: 1.3rem; } .post h2 a { color: var(--fg); text-decoration: none; } .post h2 a:hover { text-decoration: underline; }
-.prose img { border: var(--px) solid var(--line); margin: 1.2em 0; }
+.prose img, .prose video { border: var(--px) solid var(--line); margin: 1.2em 0; }
+.prose video { display: block; width: 100%; max-width: 480px; height: auto; margin-inline: auto; background: #081b40; }
 footer.site { margin-top: 80px; border-top: var(--px) solid var(--line); background: var(--card); padding: 32px 0; color: var(--muted); font-size: .9rem; }
 footer.site p { margin: .4em 0; }
 section.pad { padding: 56px 0 0; }
@@ -67,7 +69,6 @@ dialog::backdrop { background: rgba(20, 30, 26, .6); }
 /* Shared DW1-blue presentation for product snapshots. */
 .free-promise { color: var(--fg); font-size: 1rem !important; }
 .free-promise strong { color: var(--amber); }
-.hero .btn.alt, .support-panel .btn.alt { background: transparent; color: var(--fg); border-color: #8cdeff; box-shadow: none; }
 .story-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
 .story-layout h2, .section-heading h2, .detail-strip h2, .support-panel h2, .community-close h2 { margin: .45em 0 .7em; }
 .story-layout p, .section-heading p, .detail-strip p, .support-panel p, .community-close p { color: var(--muted); }
@@ -81,6 +82,8 @@ dialog::backdrop { background: rgba(20, 30, 26, .6); }
 .snapshot { display: flex; flex-direction: column; min-width: 0; background: var(--card); border: 1px solid var(--line); }
 .snapshot-image { display: grid; place-items: center; height: 260px; overflow: hidden; background: #081b40; }
 .snapshot-image img { width: 100%; height: 100%; object-fit: contain; object-position: top center; }
+.snapshot-image.motion video, .snapshot-image.motion img { width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
+.snapshot-image.motion.contain video { object-fit: contain; }
 .snapshot figcaption { display: grid; gap: 5px; padding: 16px; }
 .snapshot figcaption strong { font: 700 1rem ui-monospace, Menlo, monospace; }
 .snapshot figcaption span { color: var(--muted); font-size: .9rem; line-height: 1.45; }

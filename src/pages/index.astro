@@ -9,6 +9,14 @@ const shots = [
   ['/img/evolution-phases.png', 'Growing up', 'Experience evolution with cues inspired by the original game.'],
   ['/img/sleep-reaction-under-feet.png', 'Little moments', 'Your partner reacts to the world around it.'],
 ];
+// Filmed on a real MacBook; add 'contain' as a fourth value to show a clip uncropped.
+const clips = [
+  ['going-home', 'Nature calls', '“I have to get back to the village!” Your partner heads home when it needs the toilet.'],
+  ['coding-buddy', 'It lives where you work', 'Your partner keeps you company while you code.'],
+  ['hatch-punimon', 'Choose your egg', 'Pick a Digi-Egg in the park and watch it hatch.'],
+  ['battle-megadramon-greymon', 'Battles on your desktop', 'Megadramon and Greymon trade blows with original DW1 moves.'],
+  ['battle-piximon-meteormon', 'Every move counts', 'HP, MP and status effects play out in real time.'],
+];
 ---
 <Base description="A free Digimon World 1-inspired desktop companion for Mac. Free now, free forever, supported by its community.">
   <section class="hero"><div class="wrap">
@@ -16,13 +24,21 @@ const shots = [
     <h1>Your Digimon partner,<br />on your Mac desktop.</h1>
     <p>Raise a partner, discover its evolution and make a village your own. A little piece of the Digital World, right on your Mac.</p>
     <p class="free-promise"><strong>Free to play. Free forever.</strong> Made for fans, supported by fans.</p>
-    <div class="row"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join the community ↗</a><a class="btn alt" href="#look-inside">See the snapshots ↓</a></div>
-    <p class="hero-note">In development · Beta planned · No release date announced</p>
+    <div class="row"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join the Discord ↗</a><a class="btn alt" href="#in-motion">See it in motion ↓</a></div>
+    <p class="hero-note">Alpha and beta testing happen in Discord · No release date announced</p>
   </div></section>
 
   <section class="pad story-intro"><div class="wrap story-layout">
     <div><span class="eyebrow">A WORLD THAT LIVES WITH YOU</span><h2>From a tiny egg to a lifelong partner.</h2><p>Your Digimon lives on your desktop. Feed it, care for it and see how your choices shape its evolution.</p><p>When it’s time to rest, there’s a village waiting on a desktop of its own.</p><a href="/wallpaper">Explore the village wallpaper →</a></div>
-    <figure class="story-image"><img src="/img/village-evening.jpg" alt="The village at evening, with the park and Digimon homes" loading="lazy" /><figcaption>Your partner’s village · evening</figcaption></figure>
+    <figure class="story-image"><img src="/img/village-ready-macbook.jpg" alt="A MacBook showing the village at sunrise with four Digi-Eggs to choose from" loading="lazy" /><figcaption>Your village is ready · on a MacBook</figcaption></figure>
+  </div></section>
+
+  <section id="in-motion" class="pad"><div class="wrap">
+    <div class="section-heading"><div><span class="eyebrow">ON A REAL MAC</span><h2>See it in motion.</h2></div><p>Filmed during development. Wallpapers, effects and balance may still change.</p></div>
+    <div class="snapshot-grid">
+      {clips.map(([name, title, desc, fit]) => <figure class="snapshot"><div class={`snapshot-image motion${fit ? ` ${fit}` : ''}`}><video data-src={`/media/${name}.mp4`} poster={`/media/${name}.jpg`} muted loop playsinline preload="none" aria-label={title}></video></div><figcaption><strong>{title}</strong><span>{desc}</span></figcaption></figure>)}
+      <figure class="snapshot"><div class="snapshot-image motion"><img src="/img/partner-bench.jpg" alt="A partner Digimon resting on the village bench at night" loading="lazy" /></div><figcaption><strong>Time to rest</strong><span>At night your partner settles down in the village.</span></figcaption></figure>
+    </div>
   </div></section>
 
   <section id="look-inside" class="pad"><div class="wrap">
@@ -34,7 +50,28 @@ const shots = [
 
   <section class="pad support-section"><div class="wrap support-panel">
     <div><span class="eyebrow">HELP THIS LITTLE WORLD GROW</span><h2>Made with care.<br />Shared for free.</h2></div>
-    <div><p>MacDigiPet is free and will always be free. If you enjoy what we’re building, a voluntary tip helps support the developer’s time, tools and testing.</p><div class="row"><a class="btn" href={links.kofi} target="_blank" rel="noopener noreferrer">Support on Ko-fi ↗</a><a class="btn alt" href={links.saweria} target="_blank" rel="noopener noreferrer">Support on Saweria ↗</a></div><p class="muted">No payment required. Sharing feedback or joining the community helps too.</p><a href="/support">More ways to support →</a></div>
+    <div><p>MacDigiPet is free and will always be free. If you enjoy watching it grow, a small tip now and then helps cover the developer’s time, tools and test devices. No pressure at all.</p><div class="row"><a class="btn alt" href={links.kofi} target="_blank" rel="noopener noreferrer">Support on Ko-fi ↗</a><a class="btn alt" href={links.saweria} target="_blank" rel="noopener noreferrer">Support on Saweria ↗</a></div><p class="muted">Never required for access. Feedback, bug reports and sharing the project help just as much.</p><a href="/support">More ways to support →</a></div>
   </div></section>
-  <section class="pad"><div class="wrap community-close"><div><span class="eyebrow">FIND YOUR COMMUNITY</span><h2>Come hang out in the village.</h2><p>Follow development, share your desktop and swap ideas with fellow fans.</p></div><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord ↗</a></div></section>
+  <section class="pad"><div class="wrap community-close"><div><span class="eyebrow">ALPHA &amp; BETA</span><h2>Be there for the first builds.</h2><p>Alpha and beta testing are organised in Discord. Join to follow development, share your desktop, swap ideas with fellow fans and hear first when testing opens.</p><a href="/beta">How testing works →</a></div><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord ↗</a></div></section>
+  <script>
+    // Clips load and play only while on screen, keeping the first page load light.
+    // Each clip is fetched once into memory so loops never go back to the network,
+    // which otherwise flashes a blank frame on hosts that send no-cache.
+    const clips = document.querySelectorAll<HTMLVideoElement>('#in-motion video');
+    const load = (video: HTMLVideoElement) => {
+      const url = video.dataset.src;
+      if (!url || video.dataset.loading) return;
+      video.dataset.loading = '1';
+      fetch(url).then((r) => (r.ok ? r.blob() : Promise.reject())).then(
+        (blob) => { video.src = URL.createObjectURL(blob); },
+        () => { video.src = url; },
+      ).then(() => { if (video.dataset.visible) video.play().catch(() => {}); });
+    };
+    const io = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => {
+      const video = target as HTMLVideoElement;
+      if (isIntersecting) { video.dataset.visible = '1'; load(video); video.play().catch(() => {}); }
+      else { delete video.dataset.visible; video.pause(); }
+    }), { threshold: 0.35 });
+    clips.forEach((video) => io.observe(video));
+  </script>
 </Base>
