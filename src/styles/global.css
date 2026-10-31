@@ -83,7 +83,6 @@ dialog::backdrop { background: rgba(20, 30, 26, .6); }
 .snapshot-image { display: grid; place-items: center; height: 260px; overflow: hidden; background: #081b40; }
 .snapshot-image img { width: 100%; height: 100%; object-fit: contain; object-position: top center; }
 .snapshot-image.motion video, .snapshot-image.motion img { width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
-.snapshot-image.motion.contain video { object-fit: contain; }
 .snapshot figcaption { display: grid; gap: 5px; padding: 16px; }
 .snapshot figcaption strong { font: 700 1rem ui-monospace, Menlo, monospace; }
 .snapshot figcaption span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
@@ -106,6 +105,10 @@ dialog::backdrop { background: rgba(20, 30, 26, .6); }
   .section-heading p { margin-top: 12px; }
   .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .snapshot-image { height: 200px; }
+  /* Phones and small tablets: one clip per row at its real shape, nothing cropped. */
+  #in-motion .snapshot-grid { grid-template-columns: 1fr; }
+  .snapshot-image.motion { height: auto; }
+  .snapshot-image.motion video, .snapshot-image.motion img { height: auto; object-fit: contain; }
   .detail-strip a { grid-column: auto; }
   .community-close .btn { justify-self: start; }
 }

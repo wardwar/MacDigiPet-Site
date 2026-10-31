@@ -9,13 +9,13 @@ const shots = [
   ['/img/evolution-phases.png', 'Growing up', 'Experience evolution with cues inspired by the original game.'],
   ['/img/sleep-reaction-under-feet.png', 'Little moments', 'Your partner reacts to the world around it.'],
 ];
-// Filmed on a real MacBook; add 'contain' as a fourth value to show a clip uncropped.
+// Filmed on a real MacBook. Width and height reserve each clip's real shape, so phones can show it uncropped.
 const clips = [
-  ['going-home', 'Nature calls', '“I have to get back to the village!” Your partner heads home when it needs the toilet.'],
-  ['coding-buddy', 'It lives where you work', 'Your partner keeps you company while you code.'],
-  ['hatch-punimon', 'Choose your egg', 'Pick a Digi-Egg in the park and watch it hatch.'],
-  ['battle-megadramon-greymon', 'Battles on your desktop', 'Megadramon and Greymon trade blows with original DW1 moves.'],
-  ['battle-piximon-meteormon', 'Every move counts', 'HP, MP and status effects play out in real time.'],
+  ['going-home', 720, 720, 'Nature calls', '“I have to get back to the village!” Your partner heads home when it needs the toilet.'],
+  ['coding-buddy', 720, 466, 'It lives where you work', 'Your partner keeps you company while you code.'],
+  ['hatch-punimon', 720, 900, 'Choose your egg', 'Pick a Digi-Egg in the park and watch it hatch.'],
+  ['battle-megadramon-greymon', 720, 720, 'Battles on your desktop', 'Megadramon and Greymon trade blows with original DW1 moves.'],
+  ['battle-piximon-meteormon', 720, 720, 'Every move counts', 'HP, MP and status effects play out in real time.'],
 ];
 ---
 <Base description="A free Digimon World 1-inspired desktop companion for Mac. Free now, free forever, supported by its community.">
@@ -36,8 +36,8 @@ const clips = [
   <section id="in-motion" class="pad"><div class="wrap">
     <div class="section-heading"><div><span class="eyebrow">ON A REAL MAC</span><h2>See it in motion.</h2></div><p>Filmed during development. Wallpapers, effects and balance may still change.</p></div>
     <div class="snapshot-grid">
-      {clips.map(([name, title, desc, fit]) => <figure class="snapshot"><div class={`snapshot-image motion${fit ? ` ${fit}` : ''}`}><video data-src={`/media/${name}.mp4`} poster={`/media/${name}.jpg`} muted loop playsinline preload="none" aria-label={title}></video></div><figcaption><strong>{title}</strong><span>{desc}</span></figcaption></figure>)}
-      <figure class="snapshot"><div class="snapshot-image motion"><img src="/img/partner-bench.jpg" alt="A partner Digimon resting on the village bench at night" loading="lazy" /></div><figcaption><strong>Time to rest</strong><span>At night your partner settles down in the village.</span></figcaption></figure>
+      {clips.map(([name, width, height, title, desc]) => <figure class="snapshot"><div class="snapshot-image motion"><video width={width} height={height} data-src={`/media/${name}.mp4`} poster={`/media/${name}.jpg`} muted loop playsinline preload="none" aria-label={title}></video></div><figcaption><strong>{title}</strong><span>{desc}</span></figcaption></figure>)}
+      <figure class="snapshot"><div class="snapshot-image motion"><img src="/img/partner-bench.jpg" width="832" height="1040" alt="A partner Digimon resting on the village bench at night" loading="lazy" /></div><figcaption><strong>Time to rest</strong><span>At night your partner settles down in the village.</span></figcaption></figure>
     </div>
   </div></section>
 
