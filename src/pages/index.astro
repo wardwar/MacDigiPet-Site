@@ -1,46 +1,40 @@
 ---
 import Base from '../layouts/Base.astro';
 import { app, links } from '../config';
-const features = [
-  ['A partner that lives on your desktop', 'Click for Status & Care, drag to reposition, right-click for quick actions. It stays on one Space and can travel between Spaces and monitors.'],
-  ['Digimon World 1 care & evolution', '122 forms, four eggs, original evolution requirements, condition bubbles and the Numemon fallback, all driven by a real-time game clock.'],
-  ['A village to come home to', 'Choose your desktop, then hatch an egg in the village park. Your partner sleeps in the house and walks outside when it wakes.'],
-  ['Battles on the desktop', 'Duels play out over your windows with native move effects, contact and shadows.'],
-  ['Pixel UI, native feel', 'A pixel icon kit and V-Pet portraits share the status panel, notch controls and reaction bubbles. Built with SwiftUI, AppKit and RealityKit.'],
-  ['Yours alone', 'Saves stay on your Mac. No account, no tracking.'],
-];
 const shots = [
-  ['/img/status-panel.png', 'Status & Care with pixel icons and V-Pet portraits (development preview)'],
-  ['/img/evolution-phases.png', 'Evolution sequence, synced to the original cues'],
-  ['/img/notch-controls.png', 'Notch controls'],
-  ['/img/sleep-reaction-under-feet.png', 'Sleep reaction bubble'],
+  ['/img/status-panel.png', 'Care & status', 'Check in on your partner, tend to its needs, and watch it grow.'],
+  ['/img/status-evolution.png', 'Evolution', 'Explore the paths your care can open.'],
+  ['/img/notch-controls.png', 'At your fingertips', 'Find your partner and village from the Mac menu bar.'],
+  ['/img/status-botamon.png', 'A new beginning', 'Every adventure starts small.'],
+  ['/img/evolution-phases.png', 'Growing up', 'Experience evolution with cues inspired by the original game.'],
+  ['/img/sleep-reaction-under-feet.png', 'Little moments', 'Your partner reacts to the world around it.'],
 ];
 ---
-<Base>
+<Base description="A free Digimon World 1-inspired desktop companion for Mac. Free now, free forever, supported by its community.">
   <section class="hero"><div class="wrap">
     <span class="badge">{app.version} · macOS</span>
     <h1>Your Digimon partner,<br />on your Mac desktop.</h1>
-    <p>MacDigiPet is a native macOS companion with Digimon World 1 care and evolution, a village of its own, and room to roam across your Spaces.</p>
-    <div class="row"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a><a class="btn alt" href="/wallpaper">Try the free wallpaper</a></div>
-    <p class="hero-note">A beta is planned, with no release date set yet. Join the community to follow along—testing is optional.</p>
+    <p>Raise a partner, discover its evolution and make a village your own. A little piece of the Digital World, right on your Mac.</p>
+    <p class="free-promise"><strong>Free to play. Free forever.</strong> Made for fans, supported by fans.</p>
+    <div class="row"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join the community ↗</a><a class="btn alt" href="#look-inside">See the snapshots ↓</a></div>
+    <p class="hero-note">In development · Beta planned · No release date announced</p>
   </div></section>
 
-  <section class="pad"><div class="wrap">
-    <h2>A little life on your desktop</h2>
-    <div class="grid">{features.map(([t, d]) => <div class="card"><h3>{t}</h3><p>{d}</p></div>)}</div>
+  <section class="pad story-intro"><div class="wrap story-layout">
+    <div><span class="eyebrow">A WORLD THAT LIVES WITH YOU</span><h2>From a tiny egg to a lifelong partner.</h2><p>Your Digimon lives on your desktop. Feed it, care for it and see how your choices shape its evolution.</p><p>When it’s time to rest, there’s a village waiting on a desktop of its own.</p><a href="/wallpaper">Explore the village wallpaper →</a></div>
+    <figure class="story-image"><img src="/img/village-evening.jpg" alt="The village at evening, with the park and Digimon homes" loading="lazy" /><figcaption>Your partner’s village · evening</figcaption></figure>
   </div></section>
 
-  <section class="pad"><div class="wrap">
-    <h2>A look inside</h2>
-    <div class="grid">{shots.map(([src, cap]) => <figure class="shot"><img src={src} alt={cap} loading="lazy" /><figcaption>{cap}</figcaption></figure>)}</div>
+  <section id="look-inside" class="pad"><div class="wrap">
+    <div class="section-heading"><div><span class="eyebrow">SNAPSHOTS FROM DEVELOPMENT</span><h2>A closer look inside.</h2></div><p>Real moments from MacDigiPet as it grows. The interface and features may change during development.</p></div>
+    <div class="snapshot-grid">{shots.map(([src, title, desc]) => <figure class="snapshot"><div class="snapshot-image"><img src={src} alt={title} loading="lazy" /></div><figcaption><strong>{title}</strong><span>{desc}</span></figcaption></figure>)}</div>
   </div></section>
 
-  <section class="pad"><div class="wrap narrow">
-    <h2>Come hang out in the village</h2>
-    <p>Follow development, share your desktop and swap ideas with fellow Digimon fans in Discord. Everyone is welcome, whether you want to test a future beta or just enjoy the community.</p>
-    <p>Interested in testing? Read about the <a href="/beta">planned beta</a> and share your interest. The release date has not been set.</p>
-    <div class="row"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a><a class="btn alt" href={links.kofi} target="_blank" rel="noopener noreferrer">Support on Ko-fi</a><a class="btn alt" href={links.saweria} target="_blank" rel="noopener noreferrer">Support on Saweria</a></div>
-    <p class="muted">Support is optional. It helps with development time and tools, and does not buy beta access.</p>
-    <div class="notice"><strong>Follow the work as it grows.</strong> Progress notes live in the <a href="/devlog">dev log</a>.</div>
+  <section class="pad"><div class="wrap detail-strip"><div><span class="eyebrow">DIGIMON WORLD 1</span><h2>Care. Explore. Evolve.</h2></div><p>122 available forms, four eggs, a village to call home and battles across your desktop. Your save stays on your Mac.</p><a href="/devlog">Follow development →</a></div></section>
+
+  <section class="pad support-section"><div class="wrap support-panel">
+    <div><span class="eyebrow">HELP THIS LITTLE WORLD GROW</span><h2>Made with care.<br />Shared for free.</h2></div>
+    <div><p>MacDigiPet is free and will always be free. If you enjoy what we’re building, a voluntary tip helps support the developer’s time, tools and testing.</p><div class="row"><a class="btn" href={links.kofi} target="_blank" rel="noopener noreferrer">Support on Ko-fi ↗</a><a class="btn alt" href={links.saweria} target="_blank" rel="noopener noreferrer">Support on Saweria ↗</a></div><p class="muted">No payment required. Sharing feedback or joining the community helps too.</p><a href="/support">More ways to support →</a></div>
   </div></section>
+  <section class="pad"><div class="wrap community-close"><div><span class="eyebrow">FIND YOUR COMMUNITY</span><h2>Come hang out in the village.</h2><p>Follow development, share your desktop and swap ideas with fellow fans.</p></div><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord ↗</a></div></section>
 </Base>
