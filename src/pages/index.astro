@@ -5,9 +5,9 @@ const shots = [
   ['/img/status-panel.png', 'Care & status', 'Check in on your partner, tend to its needs, and watch it grow.'],
   ['/img/status-evolution.png', 'Evolution', 'Explore the paths your care can open.'],
   ['/img/notch-controls.png', 'At your fingertips', 'Find your partner and village from the Mac menu bar.'],
-  ['/img/status-botamon.png', 'A new beginning', 'Every adventure starts small.'],
+  ['/img/battle-notch.png', 'Battle commands', 'Fights open in the notch: watch HP and MP, then pick Auto or one of three techniques.', 'centered'],
   ['/img/evolution-phases.png', 'Growing up', 'Experience evolution with cues inspired by the original game.'],
-  ['/img/sleep-reaction-under-feet.png', 'Little moments', 'Your partner reacts to the world around it.'],
+  ['/img/music-menu.jpg', 'Original DW1 music', 'Turn on area themes from the menu bar, pick a track or let them rotate, and set the volume.'],
 ];
 // Filmed on a real MacBook. Width and height reserve each clip's real shape, so phones can show it uncropped.
 const clips = [
@@ -15,7 +15,7 @@ const clips = [
   ['coding-buddy', 720, 466, 'It lives where you work', 'Your partner keeps you company while you code.'],
   ['hatch-punimon', 720, 900, 'Choose your egg', 'Pick a Digi-Egg in the park and watch it hatch.'],
   ['battle-megadramon-greymon', 720, 720, 'Battles on your desktop', 'Megadramon and Greymon trade blows with original DW1 moves.'],
-  ['battle-piximon-meteormon', 720, 720, 'Every move counts', 'HP, MP and status effects play out in real time.'],
+  ['battle-notch-command', 720, 758, 'You call the shots', 'Pick Auto or a technique in the notch, then watch it land. HP and MP update live.'],
 ];
 ---
 <Base description="A free Digimon World 1-inspired desktop companion for Mac. Free now, free forever, supported by its community.">
@@ -43,7 +43,7 @@ const clips = [
 
   <section id="look-inside" class="pad"><div class="wrap">
     <div class="section-heading"><div><span class="eyebrow">SNAPSHOTS FROM DEVELOPMENT</span><h2>A closer look inside.</h2></div><p>Real moments from MacDigiPet as it grows. The interface and features may change during development.</p></div>
-    <div class="snapshot-grid">{shots.map(([src, title, desc]) => <figure class="snapshot"><div class="snapshot-image"><img src={src} alt={title} loading="lazy" /></div><figcaption><strong>{title}</strong><span>{desc}</span></figcaption></figure>)}</div>
+    <div class="snapshot-grid">{shots.map(([src, title, desc, fit]) => <figure class="snapshot"><div class={`snapshot-image${fit ? ` ${fit}` : ''}`}><img src={src} alt={title} loading="lazy" /></div><figcaption><strong>{title}</strong><span>{desc}</span></figcaption></figure>)}</div>
   </div></section>
 
   <section class="pad"><div class="wrap detail-strip"><div><span class="eyebrow">DIGIMON WORLD 1</span><h2>Care. Explore. Evolve.</h2></div><p>122 available forms, four eggs, a village to call home and battles across your desktop. Your save stays on your Mac.</p><a href="/devlog">Follow development →</a></div></section>

@@ -22,6 +22,6 @@ The refreshed status panel brings care, evolution, character and battle informat
 
 ## Free, always
 
-MacDigiPet is a fan project and **will always be free**. If you want to help it grow, you can [support the developer](/support) or share feedback in the [Discord community](https://discord.gg/a9jSVr922). Support is entirely optional and does not buy access or game content.
+MacDigiPet is a fan project and **will always be free**. If you want to help it grow, you can [support the developer](/support) or share feedback in the [Discord community](https://discord.gg/HH4RRfPQTj). Support is entirely optional and does not buy access or game content.
 
 Thank you for following along while this little Digital World comes together.

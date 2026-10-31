@@ -83,6 +83,8 @@ dialog::backdrop { background: rgba(20, 30, 26, .6); }
 .snapshot-image { display: grid; place-items: center; height: 260px; overflow: hidden; background: #081b40; }
 .snapshot-image img { width: 100%; height: 100%; object-fit: contain; object-position: top center; }
 .snapshot-image.motion video, .snapshot-image.motion img { width: 100%; height: 100%; object-fit: cover; object-position: center 70%; }
+/* Wide shots such as the battle notch sit in the middle of the tile. */
+.snapshot-image.centered img { object-position: center; padding: 0 10px; }
 .snapshot figcaption { display: grid; gap: 5px; padding: 16px; }
 .snapshot figcaption strong { font: 700 1rem ui-monospace, Menlo, monospace; }
 .snapshot figcaption span { color: var(--muted); font-size: .9rem; line-height: 1.45; }

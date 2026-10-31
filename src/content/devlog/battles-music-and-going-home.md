@@ -32,6 +32,6 @@ You can now turn on background music from the menu bar. Eight original Digimon W
 
 ## Joining the beta
 
-The first beta is being prepared for a small group of testers. Testing is organised in our [Discord](https://discord.gg/a9jSVr922). Post in **#beta-interest** if you’ve completed Digimon World 1 and would like to help, or just come along to watch it grow. [How testing works →](/beta)
+The first beta is being prepared for a small group of testers. Testing is organised in our [Discord](https://discord.gg/HH4RRfPQTj). Post in **#beta-interest** if you’ve completed Digimon World 1 and would like to help, or just come along to watch it grow. [How testing works →](/beta)
 
 MacDigiPet is and will stay free. If you enjoy following along, you can [support the developer](/support). It’s always optional.
