@@ -8,7 +8,7 @@ Ko-fi is the primary support option for an international audience; Saweria follo
 
 Discord is the primary community invitation across the site. Everyone can join to follow development, chat and share ideas without applying for beta testing or having completed Digimon World 1. A beta is planned, but no release date has been set; copy must not imply immediate access or available early builds.
 
-`/beta` explains the community and planned beta, with optional future-testing interest collected in Discord’s public `#beta-interest` channel. All beta testers must have played and completed Digimon World 1. Interested testers provide Mac model/chip, macOS version, completion confirmation, a brief playthrough description and intended testing focus. When testing is ready, the developer reviews interest and assigns `Beta Tester` manually; Discord does not verify game completion automatically. The site does not collect email, store signups, grant roles or reserve slots. Donations do not determine beta access.
+`/beta` explains the community and planned beta, with optional future-testing interest collected in Discord’s public `#beta-interest` channel. Since 16 November 2026, closed-alpha sign-ups are open (apply via `#tester-info`); having played or finished Digimon World 1 is a plus, not a requirement. Interested testers provide Mac model/chip, macOS version, completion confirmation, a brief playthrough description and intended testing focus. When testing is ready, the developer reviews interest and assigns `Beta Tester` manually; Discord does not verify game completion automatically. The site does not collect email, store signups, grant roles or reserve slots. Donations do not determine beta access.
 
 ## Wallpaper preview
 

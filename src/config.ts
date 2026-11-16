@@ -8,6 +8,6 @@ export const links = {
 
 export const app = {
   name: 'MacDigiPet',
-  version: 'Beta in preparation',
+  version: 'Closed alpha · sign-ups open',
   minMacOS: '15 Sequoia or later',
 };

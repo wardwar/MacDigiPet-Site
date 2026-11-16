@@ -2,29 +2,36 @@
 import Base from '../layouts/Base.astro';
 import { app, links } from '../config';
 ---
-<Base title="Beta" description="Join the MacDigiPet Discord to follow development and register interest in beta testing. No release date has been set; testing is optional.">
+<Base title="Closed alpha" description="Closed-alpha tester sign-ups for MacDigiPet are open in Discord. Selected testers get the build in small waves; no release date has been set.">
   <div class="wrap narrow page">
-    <p class="eyebrow">macOS · Community &amp; beta</p>
+    <p class="eyebrow">macOS · Community &amp; closed alpha</p>
     <h1>Join the village.</h1>
-    <p>Discord is where MacDigiPet grows: development updates, desktop screenshots, ideas from fellow Digimon fans, and the place where beta testers are invited. You’re welcome to join just to hang out.</p>
+    <p>Discord is where MacDigiPet grows: development updates, desktop screenshots, ideas from fellow Digimon fans, and the place where alpha testers are picked. You’re welcome to join just to hang out.</p>
     <div class="row actions"><a class="btn" href={links.discord} target="_blank" rel="noopener noreferrer">Join Discord</a><a class="btn alt" href="/wallpaper">Try the free wallpaper</a></div>
 
-    <h2>What the first beta includes</h2>
-    <p>The first beta focuses on <strong>Digimon World 1</strong>: 122 forms, four eggs, the village, battles and optional original background music. It is being prepared for a small group of testers first, then opened up to more people as feedback comes in.</p>
-    <p>No release date has been set yet. Joining Discord does not mean a build is available yet; timing and details will be shared there when they’re ready.</p>
+    <h2>Closed-alpha sign-ups are open</h2>
+    <p>The first alpha focuses on <strong>Digimon World 1</strong>: raising a partner from an egg, care, evolution, the village and battles on your wallpaper. It goes to a small group of testers first, in waves, then to more people as feedback comes in.</p>
+    <p>No build has gone out yet and no release date has been set. Joining Discord or applying doesn’t mean a build is available; timing and supported systems are confirmed there after final checks.</p>
 
-    <h2>Want to help test?</h2>
-    <p>If you’ve played and completed Digimon World 1 and would like to help test care, evolution, the village and battles, you can share your interest. It’s optional: you can simply join and follow along.</p>
+    <h2>Who we’re looking for</h2>
+    <ul>
+      <li>A Mac on macOS {app.minMacOS}. Final supported systems are confirmed before access.</li>
+      <li>15–30 minutes of focused use on about three days a week, for 14 days.</li>
+      <li>Honest feedback about installing, saved progress and everyday stability. No developer skills needed.</li>
+      <li>Played or finished Digimon World 1? That’s a plus, not a requirement.</li>
+    </ul>
+
+    <h2>How to apply</h2>
     <ol class="steps">
       <li>Join the Discord community using the button above.</li>
-      <li>Post in <strong>#beta-interest</strong>. Include your Mac model/chip and macOS version, confirm that you completed Digimon World 1, and briefly describe your playthrough and what you’d like to help test.</li>
-      <li>Follow the development updates. When a round of testing opens, the developer reviews interest and assigns the tester role manually. Testers get private download, feedback and bug-report channels.</li>
+      <li>Read <strong>#tester-info</strong> and apply privately there. Share your Mac model/chip, macOS version, display/Spaces setup, time zone and when you can test. Optionally tell us whether you’ve played Digimon World 1.</li>
+      <li>The developer reviews applications and assigns the tester role manually. Testers get private download, feedback and bug-report channels.</li>
     </ol>
-    <div class="notice">The completed-Digimon-World-1 requirement applies to testers only. Everyone is welcome in the community. Sharing interest does not reserve a slot or guarantee access or a release date, and donations do not guarantee or prioritise access.</div>
+    <div class="notice">Applying doesn’t reserve a slot or guarantee access or a release date. Testers are picked for hardware coverage and availability, not speed or follower count. Donations never guarantee or prioritise access. Please don’t post serial numbers or account details.</div>
 
     <h2>What to expect from early builds</h2>
-    <p>Early builds will have bugs, and that’s the point of testing them. They need macOS {app.minMacOS}; Apple silicon has been tested most. Builds are not yet notarised by Apple, so the first launch needs a right-click → Open. Saves stay on your Mac.</p>
-    <p>This website does not collect your email or store a signup. Interest is handled manually in Discord, under Discord’s own account and privacy settings. Please keep personal details out of public messages.</p>
+    <p>Early builds will have bugs, and that’s the point of testing them. They need macOS {app.minMacOS}; Apple silicon has been tested most. Saves stay on your Mac. Installation steps are shared with testers alongside the build.</p>
+    <p>This website does not collect your email or store a signup. Applications are handled manually in Discord, under Discord’s own account and privacy settings. Please keep personal details out of public messages.</p>
 
     <h2>Keep the project growing</h2>
     <p>Feedback and bug reports are the most useful thing you can give. If you’d also like to support development time and tools, a voluntary tip on <a href={links.kofi} target="_blank" rel="noopener noreferrer">Ko-fi</a> or <a href={links.saweria} target="_blank" rel="noopener noreferrer">Saweria</a> is always appreciated, never expected.</p>

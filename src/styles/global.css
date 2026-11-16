@@ -119,3 +119,13 @@ dialog::backdrop { background: rgba(20, 30, 26, .6); }
   .snapshot-image { height: 240px; }
   .hero .wrap { padding-top: 56px; padding-bottom: 56px; }
 }
+
+/* Happening now */
+.happening-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.happening-card { display: flex; flex-direction: column; gap: 8px; padding: 20px; background: var(--card); border: 1px solid var(--line); }
+.happening-card.live { border-color: var(--amber); box-shadow: 0 0 0 1px var(--amber); }
+.happening-card h3 { margin: 0; }
+.happening-card p { margin: 0; color: var(--muted); flex: 1; }
+.happening-tag { align-self: flex-start; color: var(--ink); background: var(--mint); padding: 2px 8px; font: 600 .75rem ui-monospace, Menlo, monospace; text-transform: uppercase; }
+.happening-card.live .happening-tag { background: var(--amber); }
+@media (max-width: 860px) { .happening-grid { grid-template-columns: 1fr; } }
