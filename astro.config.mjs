@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-// Set `site` (and `base` if served from a sub-path) once the domain is final.
+// Live domain; deployed from wardwar/MacDigiPet-Site main (see README).
 export default defineConfig({
-  site: 'https://macdigipet.example',
+  site: 'https://macdigipet.com',
 });

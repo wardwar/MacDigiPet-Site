@@ -1,6 +1,19 @@
 # MacDigiPet website
 
-Static Astro site. Run `npm run dev` for local preview and `npm run build` to generate `dist/`. Publish the generated directory using the intended static host. Hosting and the final domain are not configured here; `astro.config.mjs` still uses an example domain.
+Static Astro site. Run `npm run dev` for local preview and `npm run build` to generate `dist/`.
+
+## Publishing
+
+The live site is **https://macdigipet.com**. Cloudflare builds and deploys it from `main` of the separate repo `wardwar/MacDigiPet-Site`.
+
+Edit the site here in `site/` and commit to this repo. Then push the `site/` subtree to the site repo's `main`. The remote `site` points at it:
+
+```sh
+git remote add site git@github.com:wardwar/MacDigiPet-Site.git   # once per clone
+git push site "$(git subtree split --prefix=site HEAD)":refs/heads/main
+```
+
+The push must fast-forward. Never force it. If port 22 times out, push via `ssh://git@ssh.github.com:443/wardwar/MacDigiPet-Site.git`. The new pages show up about 2 minutes after the push.
 
 ## Community and support
 
